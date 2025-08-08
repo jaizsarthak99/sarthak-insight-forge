@@ -39,21 +39,34 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand & motion tokens */
+    --brand: 252 94% 67%; /* violet */
+    --brand-2: 198 94% 60%; /* azure */
+    --brand-3: 164 72% 41%; /* teal */
+    --hero-foreground: 0 0% 100%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand)), hsl(var(--brand-2)) 60%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+
+    --shadow-glow-color: 252 94% 67%;
+    --shadow-glow: 0 12px 40px -10px hsl(var(--shadow-glow-color) / 0.35);
+
+    --transition-smooth: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --spotlight-size: 640px;
+
+    /* Typography */
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
+
 
   .dark {
     --background: 222.2 84% 4.9%;
@@ -91,6 +104,9 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand & motion tokens - dark tuning */
+    --shadow-glow-color: 198 94% 60%;
   }
 }
 
@@ -101,5 +117,37 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    background-image: var(--gradient-subtle);
   }
+}
+
+/* Design system utilities */
+.btn-hero {
+  background: var(--gradient-hero);
+  color: hsl(var(--hero-foreground));
+  border: 1px solid hsl(var(--border) / 0.4);
+  box-shadow: var(--shadow-glow);
+  transition: var(--transition-smooth);
+}
+.btn-hero:hover { filter: brightness(1.05); }
+.btn-hero:active { transform: translateY(1px); }
+
+.shadow-glow { box-shadow: var(--shadow-glow); }
+
+/* Signature spotlight effect */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle var(--spotlight-size) at var(--spotlight-x, 50%) var(--spotlight-y, 0%),
+    hsl(var(--brand) / 0.35),
+    transparent 60%
+  );
+  opacity: .8;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-hero { transition: none; }
+  .spotlight { opacity: .3; }
 }
