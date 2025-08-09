@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import Spotlight from "@/components/Spotlight";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
 import { Mail, FileDown, ArrowRight, BarChart3, LineChart, PieChart } from "lucide-react";
 
 const Index = () => {
@@ -32,6 +33,7 @@ const Index = () => {
           <div className="hidden md:flex items-center gap-6 text-sm">
             <a href="#about" className="hover:opacity-80">About</a>
             <a href="#skills" className="hover:opacity-80">Skills</a>
+            <a href="#experience" className="hover:opacity-80">Experience</a>
             <a href="#work" className="hover:opacity-80">Case Studies</a>
             <a href="#contact" className="hover:opacity-80">Contact</a>
           </div>
@@ -115,6 +117,44 @@ const Index = () => {
               </article>
             ))}
           </div>
+        </section>
+
+        <section id="experience" className="container mx-auto px-4 md:px-8 mt-16 md:mt-24">
+          <h2 className="text-2xl font-semibold mb-6">Work Experience</h2>
+          <ExperienceTimeline
+            items={[
+              {
+                role: "Operations Assistant",
+                company: "University of Warwick, UK",
+                period: "Feb 2024 – Present",
+                points: [
+                  "Led end-to-end data reporting for 25,000+ students, improving forecasting accuracy to 98%.",
+                  "Streamlined reconciliation of 50,000+ accommodation records using Power BI and Excel.",
+                  "Automated GDPR-compliant document generation, reducing workload by 60%."
+                ]
+              },
+              {
+                role: "Business Analyst",
+                company: "Robinson Moore, UK",
+                period: "Oct 2023 – Mar 2024",
+                points: [
+                  "Analysed CRM user engagement for 5,000+ users, boosting daily active users by 25%.",
+                  "Cleaned customer data across 8 systems for accurate CRM migration (+35% lead assignment accuracy).",
+                  "Created workflow visualizations, reducing turnaround time by 30%."
+                ]
+              },
+              {
+                role: "Founder",
+                company: "Artwitch LLP, India",
+                period: "Nov 2020 – Jan 2023",
+                points: [
+                  "Built forecasting models for artist commissions, increasing fulfilment rate by 30%.",
+                  "Managed analytics for 20+ hospitality brands, growing B2B revenue 7.5x in 18 months.",
+                  "Developed budget dashboards maintaining 95% adherence to spending plans."
+                ]
+              }
+            ]}
+          />
         </section>
 
         <section id="work" className="container mx-auto px-4 md:px-8 mt-16 md:mt-24">
