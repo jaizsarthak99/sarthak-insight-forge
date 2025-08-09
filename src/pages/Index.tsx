@@ -92,12 +92,120 @@ const Index = () => {
             <aside className="rounded-xl border border-border/40 p-6 bg-card">
               <h3 className="font-medium mb-2">Core Tools</h3>
               <ul className="text-sm text-muted-foreground grid grid-cols-2 gap-2">
-                <li className="hover-scale transition-transform animate-fade-in">Excel/Sheets</li>
-                <li className="hover-scale transition-transform animate-fade-in">SQL</li>
-                <li className="hover-scale transition-transform animate-fade-in">Power BI</li>
-                <li className="hover-scale transition-transform animate-fade-in">Tableau</li>
-                <li className="hover-scale transition-transform animate-fade-in">Jira/Confluence</li>
-                <li className="hover-scale transition-transform animate-fade-in">Python</li>
+                <li
+                  className="group relative rounded-md px-2 py-1 hover-scale transition-transform animate-fade-in"
+                  onMouseMove={(e) => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                  }}
+                >
+                  <div
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(350px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                    }}
+                  />
+                  Excel/Sheets
+                </li>
+                <li
+                  className="group relative rounded-md px-2 py-1 hover-scale transition-transform animate-fade-in"
+                  onMouseMove={(e) => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                  }}
+                >
+                  <div
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(350px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                    }}
+                  />
+                  SQL
+                </li>
+                <li
+                  className="group relative rounded-md px-2 py-1 hover-scale transition-transform animate-fade-in"
+                  onMouseMove={(e) => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                  }}
+                >
+                  <div
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(350px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                    }}
+                  />
+                  Power BI
+                </li>
+                <li
+                  className="group relative rounded-md px-2 py-1 hover-scale transition-transform animate-fade-in"
+                  onMouseMove={(e) => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                  }}
+                >
+                  <div
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(350px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                    }}
+                  />
+                  Tableau
+                </li>
+                <li
+                  className="group relative rounded-md px-2 py-1 hover-scale transition-transform animate-fade-in"
+                  onMouseMove={(e) => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                  }}
+                >
+                  <div
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(350px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                    }}
+                  />
+                  Jira/Confluence
+                </li>
+                <li
+                  className="group relative rounded-md px-2 py-1 hover-scale transition-transform animate-fade-in"
+                  onMouseMove={(e) => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                  }}
+                >
+                  <div
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(350px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                    }}
+                  />
+                  Python
+                </li>
               </ul>
             </aside>
           </div>
@@ -199,7 +307,23 @@ const Index = () => {
         </section>
 
         <section id="contact" className="container mx-auto px-4 md:px-8 mt-16 md:mt-24 mb-20">
-          <div className="rounded-2xl border border-border/40 p-8 bg-card text-center">
+          <div
+            className="group relative rounded-2xl border border-border/40 p-8 bg-card text-center overflow-hidden hover:shadow-glow transition"
+            onMouseMove={(e) => {
+              const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+              e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+            }}
+          >
+            <div
+              className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+              }}
+            />
             <h2 className="text-2xl font-semibold">Let’s collaborate</h2>
             <p className="text-muted-foreground mt-2">Open to full-time roles and consulting.</p>
             <div className="mt-6 flex items-center justify-center gap-3">
