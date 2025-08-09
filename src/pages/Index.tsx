@@ -113,9 +113,23 @@ const Index = () => {
             ].map((s, idx) => (
               <article
                 key={s.title}
-                className="rounded-xl border border-border/40 p-6 bg-card hover:shadow-glow hover-scale transition animate-fade-in"
+                className="group relative rounded-2xl border border-border/40 p-6 bg-card overflow-hidden hover:shadow-glow hover-scale transition animate-fade-in"
                 style={{ animationDelay: `${idx * 80}ms` }}
+                onMouseMove={(e) => {
+                  const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                  e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                }}
               >
+                <div
+                  className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                  style={{
+                    background:
+                      "radial-gradient(600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                  }}
+                />
                 <h3 className="font-medium">{s.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
               </article>
