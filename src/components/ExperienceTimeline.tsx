@@ -15,11 +15,11 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ items }) => {
   return (
     <ol aria-label="Work experience timeline" className="relative border-l border-border/60 pl-6">
       {items.map((item, idx) => (
-        <li key={item.role + item.company} className="relative mb-10 animate-fade-in" style={{ animationDelay: `${idx * 120}ms` }}>
+        <li key={item.role + item.company} className="group relative mb-10 animate-fade-in" style={{ animationDelay: `${idx * 120}ms` }}>
           {/* Node */}
-          <span className="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-primary shadow-glow" aria-hidden="true" />
+          <span className="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-primary shadow-glow transition-transform group-hover:scale-110" aria-hidden="true" />
 
-          <article className="bg-card border border-border/40 rounded-xl p-5 hover:shadow-glow transition-shadow">
+          <article className="bg-card border border-border/40 rounded-xl p-5 hover:shadow-glow hover:ring-1 hover:ring-primary/30 transition-shadow hover-scale">
             <header className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
               <h3 className="font-medium tracking-tight text-foreground">
                 {item.role} 									

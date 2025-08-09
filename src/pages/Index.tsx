@@ -92,12 +92,12 @@ const Index = () => {
             <aside className="rounded-xl border border-border/40 p-6 bg-card">
               <h3 className="font-medium mb-2">Core Tools</h3>
               <ul className="text-sm text-muted-foreground grid grid-cols-2 gap-2">
-                <li>Excel/Sheets</li>
-                <li>SQL</li>
-                <li>Power BI</li>
-                <li>Tableau</li>
-                <li>Jira/Confluence</li>
-                <li>Python</li>
+                <li className="hover-scale transition-transform animate-fade-in">Excel/Sheets</li>
+                <li className="hover-scale transition-transform animate-fade-in">SQL</li>
+                <li className="hover-scale transition-transform animate-fade-in">Power BI</li>
+                <li className="hover-scale transition-transform animate-fade-in">Tableau</li>
+                <li className="hover-scale transition-transform animate-fade-in">Jira/Confluence</li>
+                <li className="hover-scale transition-transform animate-fade-in">Python</li>
               </ul>
             </aside>
           </div>
@@ -110,8 +110,12 @@ const Index = () => {
               { title: "Business Process Mapping", desc: "BPMN, requirements elicitation, stakeholder alignment" },
               { title: "Data Analysis", desc: "SQL, data modeling, ETL, hypothesis testing" },
               { title: "Dashboards & Reporting", desc: "KPI design, Power BI/Tableau, executive storytelling" },
-            ].map((s) => (
-              <article key={s.title} className="rounded-xl border border-border/40 p-6 bg-card hover:shadow-glow transition">
+            ].map((s, idx) => (
+              <article
+                key={s.title}
+                className="rounded-xl border border-border/40 p-6 bg-card hover:shadow-glow hover-scale transition animate-fade-in"
+                style={{ animationDelay: `${idx * 80}ms` }}
+              >
                 <h3 className="font-medium">{s.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
               </article>
