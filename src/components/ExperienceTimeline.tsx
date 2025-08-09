@@ -13,7 +13,7 @@ interface ExperienceTimelineProps {
 
 const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ items }) => {
   return (
-    <ol aria-label="Work experience timeline" className="relative border-l border-border/60 pl-6">
+    <ol aria-label="Work experience timeline" className="relative border-l border-border/60 pl-4 sm:pl-6">
       {items.map((item, idx) => (
         <li key={item.role + item.company} className="group relative mb-10 animate-fade-in" style={{ animationDelay: `${idx * 120}ms` }}>
           {/* Node */}

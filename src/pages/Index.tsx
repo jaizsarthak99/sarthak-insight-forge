@@ -49,19 +49,19 @@ const Index = () => {
           <div className="relative rounded-2xl border border-border/40 bg-background/80 backdrop-blur-sm py-14 md:py-20 px-6 md:px-12 overflow-hidden">
             <Spotlight className="absolute inset-0" />
             <section className="grid md:grid-cols-2 gap-10 items-center relative">
-              <article>
+              <article className="text-center md:text-left">
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
                   SarthaK Jaiswal — Business Analyst
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
                   Turning data into decisions. I analyze processes, model KPIs, and deliver insights that improve product, revenue, and customer outcomes.
                 </p>
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
                   <a href="#work"><Button variant="hero" size="lg">Explore Projects<ArrowRight className="ml-2"/></Button></a>
                   <a href="#contact"><Button variant="outline" size="lg"><Mail className="mr-2"/>Get in touch</Button></a>
                   <a href="#contact"><Button variant="ghost" size="lg"><FileDown className="mr-2"/>Download Resume</Button></a>
                 </div>
-                <div className="mt-8 flex gap-6 text-muted-foreground">
+                <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-6 text-muted-foreground">
                   <div className="flex items-center gap-2"><BarChart3/> Process Optimization</div>
                   <div className="flex items-center gap-2"><LineChart/> KPI Dashboards</div>
                   <div className="flex items-center gap-2"><PieChart/> Insights & Strategy</div>
