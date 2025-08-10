@@ -53,7 +53,7 @@ const Index = () => {
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
                   <a href="#work"><Button variant="hero" size="lg">Explore Projects<ArrowRight className="ml-2" /></Button></a>
-                  <a href="#contact"><Button variant="outline" size="lg"><Mail className="mr-2" />Get in touch</Button></a>
+                  <a href="mailto:reachsarthakjais@gmail.com"><Button variant="outline" size="lg"><Mail className="mr-2" />Get in touch</Button></a>
                   <a href="#contact"><Button variant="ghost" size="lg"><FileDown className="mr-2" />Download Resume</Button></a>
                 </div>
                 <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-6 text-muted-foreground">
@@ -243,7 +243,7 @@ const Index = () => {
             <h2 className="text-2xl font-semibold">Let’s collaborate</h2>
             <p className="text-muted-foreground mt-2">Open to full-time roles and consulting.</p>
             <div className="mt-6 flex items-center justify-center gap-3">
-              <a href="mailto:sarthak@example.com"><Button variant="hero"><Mail className="mr-2" />Email Me</Button></a>
+              <a href="mailto:reachsarthakjais@gmail.com"><Button variant="hero"><Mail className="mr-2" />Email Me</Button></a>
               <a href="#top"><Button variant="outline">Back to top</Button></a>
             </div>
           </div>
