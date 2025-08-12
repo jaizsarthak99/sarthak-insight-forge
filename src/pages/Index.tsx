@@ -216,7 +216,7 @@ const Index = () => {
             title: "Healthcare Data Analysis & Performance Optimization",
             desc: "Identified risk signals and optimized onboarding, improving retention by 8%."
           }, {
-            title: "Supply chain dashboard for ops",
+            title: "E-commerce Customer Segmentation (RFM Analysis)",
             desc: "Unified KPIs across systems, enabling faster weekly decision cycles."
           }].map(c => <article key={c.title} className="rounded-2xl border border-border/40 p-6 bg-card group overflow-hidden relative">
                 <div className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none" style={{
