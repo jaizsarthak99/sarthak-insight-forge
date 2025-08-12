@@ -213,7 +213,7 @@ const Index = () => {
           <h2 className="text-2xl font-semibold mb-6">Highlighted Case Studies</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[{
-            title: "Reducing churn with cohort analysis",
+            title: "E-commerce Customer Segmentation (RFM Analysis)",
             desc: "Identified risk signals and optimized onboarding, improving retention by 8%."
           }, {
             title: "Supply chain dashboard for ops",
