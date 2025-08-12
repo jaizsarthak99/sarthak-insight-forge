@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Spotlight from "@/components/Spotlight";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import { Mail, FileDown, ArrowRight, BarChart3, LineChart, PieChart } from "lucide-react";
+import Skills from "@/components/sections/Skills";
 const Index = () => {
   const title = "SarthaK Jaiswal | Business Analyst Portfolio";
   const description = "Modern business analyst portfolio: case studies, skills, and contact.";
@@ -184,6 +185,11 @@ const Index = () => {
                 <h3 className="font-medium">{s.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
               </article>)}
+          </div>
+          <div className="mt-10">
+            <div className="rounded-2xl border border-border/40 bg-card p-4">
+              <Skills />
+            </div>
           </div>
         </section>
 
