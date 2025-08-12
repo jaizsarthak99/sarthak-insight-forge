@@ -75,9 +75,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <article className="md:col-span-2">
               <h2 className="text-2xl font-semibold mb-3">About</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                I specialize in breaking down complex problems and translating them into clear, actionable solutions. My focus areas include requirements gathering, stakeholder communication, building analytical models, and delivering performance dashboards that guide strategy.
-              </p>
+              <p className="text-muted-foreground leading-relaxed">I specialize in breaking down complex problems and translating them into clear, actionable solutions. My focus areas include requirements gathering, stakeholder communication, building analytical models and delivering performance dashboards that guide strategy.</p>
             </article>
             <aside className="rounded-xl border border-border/40 p-6 bg-card">
               <h3 className="font-medium mb-2">Core Tools</h3>
