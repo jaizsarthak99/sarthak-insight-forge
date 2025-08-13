@@ -160,35 +160,47 @@ const Index = () => {
 
         <section id="skills" className="container mx-auto px-4 md:px-8 mt-16 md:mt-24">
           <h2 className="text-2xl font-semibold mb-6">Skills</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[{
-            title: "Business Process Mapping",
-            desc: "BPMN, requirements elicitation, stakeholder alignment"
-          }, {
-            title: "Data Analysis",
-            desc: "SQL, data modeling, ETL, hypothesis testing"
-          }, {
-            title: "Dashboards & Reporting",
-            desc: "KPI design, Power BI/Tableau, executive storytelling"
-          }].map((s, idx) => <article key={s.title} className="group relative rounded-2xl border border-border/40 p-6 bg-card overflow-hidden hover:shadow-glow hover-scale transition animate-fade-in" style={{
-            animationDelay: `${idx * 80}ms`
-          }} onMouseMove={e => {
-            const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
-            e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
-          }}>
-                <div className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none" style={{
-              background: "radial-gradient(600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)"
-            }} />
-                <h3 className="font-medium">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
-              </article>)}
-          </div>
-          <div className="mt-10">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Left: Chart */}
             <div className="rounded-2xl border border-border/40 bg-card p-4">
               <Skills />
+            </div>
+
+            {/* Right: Three skill cards */}
+            <div className="grid grid-cols-1 gap-6">
+              {[{
+                title: "Business Process Mapping",
+                desc: "BPMN, requirements elicitation, stakeholder alignment"
+              }, {
+                title: "Data Analysis",
+                desc: "SQL, data modeling, ETL, hypothesis testing"
+              }, {
+                title: "Dashboards & Reporting",
+                desc: "KPI design, Power BI/Tableau, executive storytelling"
+              }].map((s, idx) => (
+                <article
+                  key={s.title}
+                  className="group relative rounded-2xl border border-border/40 p-6 bg-card overflow-hidden hover:shadow-glow hover-scale transition animate-fade-in"
+                  style={{ animationDelay: `${idx * 80}ms` }}
+                  onMouseMove={(e) => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--spotlight-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--spotlight-y", `${y}px`);
+                  }}
+                >
+                  <div
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), hsl(var(--brand) / 0.15), transparent 40%)",
+                    }}
+                  />
+                  <h3 className="font-medium">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
